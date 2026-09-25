@@ -1,0 +1,209 @@
+{
+  "tool": {
+    "id": "regra-de-ottawa-joelho",
+    "title": "Regra de Ottawa para joelho",
+    "short": "Quando pedir radiografia no trauma do joelho",
+    "desc": "Regra de Ottawa para joelho: cinco critérios clínicos para decidir se o trauma agudo do joelho precisa de radiografia para excluir fratura.",
+    "lead": "Identifica, no trauma agudo do joelho em adultos, quem precisa de radiografia: basta um dos cinco critérios para indicar o exame.",
+    "spec": [
+      "ortopedia-e-traumatologia",
+      "medicina-de-emergencia",
+      "medicina-esportiva"
+    ],
+    "tier": 1,
+    "fields": [
+      [
+        "idade55",
+        "Idade de 55 anos ou mais",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "patela",
+        "Dor à palpação <strong>isolada da patela</strong> (sem outra dor óssea no joelho)",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "fibula",
+        "Dor à palpação da <strong>cabeça da fíbula</strong>",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "flexao",
+        "Incapaz de fletir o joelho a 90°",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "carga",
+        "Incapaz de dar 4 passos logo após o trauma e no atendimento",
+        "chk",
+        {
+          "pts": 1
+        }
+      ]
+    ],
+    "score": {
+      "label": "Critérios presentes",
+      "unit": "",
+      "bands": [
+        [
+          0,
+          "low",
+          "Nenhum critério: radiografia dispensável pela regra",
+          "Reavaliar se a dor ou a limitação persistirem."
+        ],
+        [
+          1,
+          "mid",
+          "Radiografia do joelho indicada",
+          "Um critério basta para indicar o exame."
+        ]
+      ]
+    },
+    "formula": "<p>Radiografia indicada se houver <strong>qualquer um</strong> dos cinco critérios: idade ≥ 55 anos; dor isolada à palpação da patela; dor à palpação da cabeça da fíbula; incapacidade de fletir a 90°; incapacidade de apoiar o peso (4 passos) logo após o trauma e no atendimento.</p>",
+    "table": [
+      [
+        "Critérios",
+        "Conduta"
+      ],
+      [
+        "0",
+        "Radiografia dispensável"
+      ],
+      [
+        "1 ou mais",
+        "Radiografia do joelho"
+      ]
+    ],
+    "tips": [
+      "Validada em adultos com trauma de joelho nos últimos 7 dias; não use em quem tem alteração do nível de consciência, paraplegia ou múltiplas lesões.",
+      "A regra busca <strong>fratura</strong>: lesões ligamentares e meniscais precisam de exame físico dirigido (Lachman, gaveta, McMurray) e, se indicado, ressonância.",
+      "Derrame articular volumoso e rápido após trauma torcional sugere hemartrose (ligamento cruzado anterior, fratura osteocondral) mesmo com regra negativa.",
+      "Dor na patela conta só se for isolada: dor difusa na parte anterior do joelho não preenche o critério."
+    ],
+    "sources": [
+      [
+        "Stiell IG et al. Prospective validation of a decision rule for the use of radiography in acute knee injuries. JAMA, 1996.",
+        "https://doi.org/10.1001/jama.1996.03530320035031"
+      ]
+    ],
+    "cases": [
+      [
+        "Adulto jovem sem nenhum critério: 0",
+        [],
+        {
+          "score": 0,
+          "level": "low"
+        }
+      ],
+      [
+        "60 anos com dor na cabeça da fíbula: 2 critérios",
+        {
+          "idade55": true,
+          "fibula": true
+        },
+        {
+          "score": 2,
+          "level": "mid"
+        }
+      ],
+      [
+        "Só incapacidade de fletir a 90°: 1 critério basta",
+        {
+          "flexao": true
+        },
+        {
+          "score": 1,
+          "level": "mid"
+        }
+      ]
+    ],
+    "batch": "cirurgia-sentidos",
+    "kind": "Escore",
+    "config": {
+      "unit": "",
+      "label": "Critérios presentes",
+      "fields": [
+        [
+          "idade55",
+          "chk",
+          1
+        ],
+        [
+          "patela",
+          "chk",
+          1
+        ],
+        [
+          "fibula",
+          "chk",
+          1
+        ],
+        [
+          "flexao",
+          "chk",
+          1
+        ],
+        [
+          "carga",
+          "chk",
+          1
+        ]
+      ],
+      "bands": [
+        [
+          0,
+          "low",
+          "Nenhum critério: radiografia dispensável pela regra",
+          "Reavaliar se a dor ou a limitação persistirem."
+        ],
+        [
+          1,
+          "mid",
+          "Radiografia do joelho indicada",
+          "Um critério basta para indicar o exame."
+        ]
+      ]
+    },
+    "areaId": "cirurgia-sentidos",
+    "clinicalReview": "pending",
+    "sourceReview": "pending",
+    "sourceFile": "app/content/ferramentas/cirurgia-sentidos.php",
+    "arithmeticTest": {
+      "status": "passed",
+      "testedAt": "2026-09-25",
+      "total": 3,
+      "passed": 3,
+      "failures": []
+    },
+    "independentArithmeticTest": {
+      "status": "not-tested",
+      "testedAt": null,
+      "total": 0,
+      "passed": 0,
+      "cases": []
+    }
+  },
+  "review": {
+    "status": "needs-review",
+    "reason": "Revisão documental e clínica independente pendente.",
+    "clinicalValidation": "not-performed"
+  },
+  "sourceFile": {
+    "path": "app/content/ferramentas/cirurgia-sentidos.php",
+    "sha256": "21fc91a9a8187a66496f68c2ac8fbdd20a65ceeea519687c963b857f72640866",
+    "bytes": 89063
+  },
+  "clinicalValidation": "not-performed"
+}

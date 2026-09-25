@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Adulto jovem sem nenhum critério: 0",
+    "input": {},
+    "expected": {
+      "score": 0,
+      "level": "low"
+    },
+    "originalInput": [],
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "60 anos com dor na cabeça da fíbula: 2 critérios",
+    "input": {
+      "idade55": true,
+      "fibula": true
+    },
+    "expected": {
+      "score": 2,
+      "level": "mid"
+    },
+    "originalInput": {
+      "idade55": true,
+      "fibula": true
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "Só incapacidade de fletir a 90°: 1 critério basta",
+    "input": {
+      "flexao": true
+    },
+    "expected": {
+      "score": 1,
+      "level": "mid"
+    },
+    "originalInput": {
+      "flexao": true
+    },
+    "expandedZeroOptions": []
+  }
+]
