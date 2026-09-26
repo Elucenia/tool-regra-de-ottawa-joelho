@@ -1,11 +1,11 @@
-/* tool-regra-de-ottawa-joelho · Elucenia · https://github.com/Elucenia/tool-regra-de-ottawa-joelho
-   Copyright (c) 2026 Elucenia · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
+/* tool-regra-de-ottawa-joelho · ELUCENIA · https://github.com/Elucenia/tool-regra-de-ottawa-joelho
+   Copyright (c) 2026 ELUCENIA · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
    Standalone integration. Package metadata and rights: README.md. */
 (function(root){'use strict';
 function freeze(value){if(value&&typeof value==='object'){for(const item of Object.values(value))freeze(item);Object.freeze(value);}return value;}
 const TOOL=freeze({"id":"regra-de-ottawa-joelho","title":"Regra de Ottawa para joelho","fields":[["idade55","Idade de 55 anos ou mais","chk",{"pts":1}],["patela","Dor à palpação <strong>isolada da patela</strong> (sem outra dor óssea no joelho)","chk",{"pts":1}],["fibula","Dor à palpação da <strong>cabeça da fíbula</strong>","chk",{"pts":1}],["flexao","Incapaz de fletir o joelho a 90°","chk",{"pts":1}],["carga","Incapaz de dar 4 passos logo após o trauma e no atendimento","chk",{"pts":1}]],"config":{"unit":"","label":"Critérios presentes","fields":[["idade55","chk",1],["patela","chk",1],["fibula","chk",1],["flexao","chk",1],["carga","chk",1]],"bands":[[0,"low","Nenhum critério: radiografia dispensável pela regra","Reavaliar se a dor ou a limitação persistirem."],[1,"mid","Radiografia do joelho indicada","Um critério basta para indicar o exame."]]},"reviewStatus":"needs-review","clinicalValidation":"not-performed"});
 const window={};
-/* Elucenia arithmetic registry. No DOM access, storage, telemetry or network requests. */
+/* ELUCENIA arithmetic registry. No DOM access, storage, telemetry or network requests. */
 (function(root){
   'use strict';
   const CALC={fn:Object.create(null)};
